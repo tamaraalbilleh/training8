@@ -1,4 +1,4 @@
-DROP TABLE IF EXSIST jokes;
+DROP TABLE IF EXISTS jokes;
 CREATE TABLE jokes (
     id SERIAL PRIMARY KEY,
     number VARCHAR (225),

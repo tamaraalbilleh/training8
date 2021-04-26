@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <h2>ID Number : <%= data.number %> </h2>
+    <h3>type : <%= data.type %> </h3>
+    <p>setup : <%= data.setup %> </p>
+    <p>punchline : <%= data.punchline %> </p>
+<section>
+    <form action="/details/<%= data.id %>?_method=PUT" method="POST">
+        <input type="text" name="number" id="number" value="<%=data.number %>">
+        <input type="text" name="type" id="type" value="<%= data.type %>">
+        <input type="text" name="setup" id="setup" value="<%= data.setup %>">
+        <input type="text" name="punchline" id="punchline" value="<%= data.punchline %>">
+        <input type="submit" value="UPDATE">
+        </form>
+</section>
+<section>
+    <form action="/details/<%= data.id %>?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE">
+    </form>
+</section>
+
+</body>
+</html>

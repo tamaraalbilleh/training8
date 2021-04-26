@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JOKES home page </h1>
+    <a href="/random">GET random Joke</a>
+    <% data.forEach (item=>{%>
+        <section>
+            <h2>joke number : <%= item.id %> </h2>
+            <h3>type : <%= item.type %> </h3>
+            <p>setup : <%= item.setup %> </p>
+            <p>punchline : <%= item.punchline %> </p>
+
+            <form action="/fav" method="POST">
+            <input type="hidden" name="number" id="number" value="<%=item.id %>">
+            <input type="hidden" name="type" id="type" value="<%= item.type %>">
+            <input type="hidden" name="setup" id="setup" value="<%= item.setup %>">
+            <input type="hidden" name="punchline" id="punchline" value="<%= item.punchline %>">
+            <input type="submit" value="Add-to-my-jokes-list">
+            </form>
+        </section>
+    <%}) %> 
+   
+</body>
+</html>
